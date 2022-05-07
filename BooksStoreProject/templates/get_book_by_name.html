@@ -1,0 +1,51 @@
+{% extends 'userlayout.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Book</title>
+</head>
+<body>
+    {%block content%}
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <form action="", method="post">
+          <div class="row">
+            <h2 style="text-align:center">Search for a Book</h2>
+            <input type="search" name="search" placeholder="search name">
+            <input type="submit" value="search">
+    </form>
+    {%endblock%}
+    <br>
+    <br>
+    <br>
+    <br>
+    {%block extra%}
+  
+ 
+    {%for i in res%}
+    <div class=" row-cols-1 row-cols-md-3 g-4"></div>
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="/static/pic1.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{i[1]}}</h5>
+                <p class="card-text">Autor: {{i[2]}}</p>
+                <p class="card-text">Year Published: {{i[3]}}</p>
+                <p class="card-text">Type: {{i[4]}}</p>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    {%endfor%}
+    {%endblock%}
+</body>
+</body>
+</html>

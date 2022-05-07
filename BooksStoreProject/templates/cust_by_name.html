@@ -1,0 +1,60 @@
+{%extends "userlayout.html"%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {%block content%}
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <form action="", method="post">
+          <div class="row">
+            <h2 style="text-align:center">search for a customer</h2>
+            <input type="search" name="search" placeholder="search by name">
+            <input type="submit" value="search">
+    </form>
+    {%endblock%}
+    <br>
+    <br>
+    <br>
+    <br>
+    {%block extra%}
+    <!-- flash messages -->
+    {%with messages = get_flashed_messages()%}
+    {%if messages%}
+    {%for msg in messages%}
+    <p>
+    <h2>{{msg}}</h2>
+    </p>
+    {%endfor%}
+    {%endif%}
+    {%endwith%}
+    <!-- fash messages end -->
+    {%for i in res%}
+    <div class=" row-cols-1 row-cols-md-3 g-4"></div>
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="/static/user.png" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{i[3]}}</h5>
+                <p class="card-text">ID: {{i[0]}}</p>
+                <p class="card-text">Email: {{i[1]}}</p>
+                <p class="card-text">City: {{i[4]}}</p>
+                <p class="card-text">age: {{i[5]}}</p>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    {%endfor%}
+    {%endblock%}
+</body>
+</html>

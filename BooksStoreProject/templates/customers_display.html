@@ -1,0 +1,35 @@
+{%extends 'userlayout.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Customers</title>
+</head>
+<body>
+    {%block content%}
+
+    {%for i in res%}
+    
+    <div class="container">
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+            <img src="/static/pic1.png" class="card-img-top" alt="...">
+                <h5 class="card-title">{{i[3]}}</h5>
+                <p class="card-text">ID: {{i[0]}}</p>
+                <p class="card-text">Email: {{i[1]}}</p>
+                <p class="card-text">City: {{i[4]}}</p>
+                <p class="card-text">age: {{i[5]}}</p>
+                <a href="/customers/delete_cust/{{i[0]}}" button type="button" class="btn btn-danger">DELETE</button></a>
+                </p>
+            </div>
+        </div>
+    </div>
+   
+    <br>
+    {%endfor%}
+  
+    {%endblock%}
+</body>
+</html>

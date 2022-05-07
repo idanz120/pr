@@ -1,0 +1,35 @@
+{% extends 'userlayout.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display loans</title>
+</head>
+<body>
+    {%block content%}
+    {%for i in res%}
+                <div class="container">
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                        <img src="/static/user.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">customer ID {{i[0]}}</h5> 
+                            <p class="card-text">Book ID: {{i[1]}}</p>
+                            <p class="card-text">Loan Date: {{i[2]}}</p>
+                            <p class="card-text">Return Date: {{i[3]}}</p>
+                            <a href="/books/return/{{i[1]}}" button type="button" class="btn btn-info">RETURN</button></a>
+                            
+                        </div>
+                    </div>
+                </div>
+                </div>      
+        
+    {%endfor%}
+       
+    {%endblock%}
+
+</body>
+</html>

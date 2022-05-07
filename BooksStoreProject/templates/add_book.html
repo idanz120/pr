@@ -1,0 +1,25 @@
+{% extends 'userlayout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+</head>
+{% block content %}
+<body style="background-color: beige;">
+    <form action="/books/add" method="post">
+        <h3>Name</h3>
+        <input type="text" id="name" name="name" placeholder="Enter the book name"> <br/>
+        <h3>Author</h3>
+         <input type="text" id="author" name="author" placeholder="Enter the author name"> <br/>
+         <h3>Year Published</h3>
+         <input type="number" id="yearPublished" name="yearPublished" placeholder="Enter the publishing year"> <br/>
+         <h3>Type</h3>
+         <input type="number" id="type" name="type" placeholder="Enter the type"> <br/><br/>
+         <input type="submit" value="Submit">
+    </form>
+    {% endblock %}
+</body>
+</html>

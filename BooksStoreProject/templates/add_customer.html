@@ -1,0 +1,21 @@
+{% extends 'userlayout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add customer</title>
+</head>
+<body>
+    {% block content %}
+    <form action="/customer/add" method="post">
+        <input type="text" id="name" name="name" placeholder="Enter your name"> <br/>
+         <input type="text" id="city" name="city" placeholder="Enter the city "> <br/>
+         <input type="number" id="age" name="age" placeholder="Enter the age"> <br/>
+        <input type="submit" value="Submit">
+
+   </form> 
+   {% endblock %}
+</body>
+</html>

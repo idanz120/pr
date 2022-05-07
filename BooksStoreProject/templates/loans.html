@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   {% block content %}
+    <form action="/loans/add_form" method="post">
+        <input type="number" id="cust_id" name="cust_id" placeholder="Enter cust id"> <br/>
+         <input type="number" id="book_id" name="book_id" placeholder="Enter book id "> <br/>
+         <input type="submit" value="Submit">
+  {% endblock %}     
+</body>
+</html>
